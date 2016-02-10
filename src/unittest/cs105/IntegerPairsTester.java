@@ -16,8 +16,8 @@ import org.junit.Test;
 import edu.sbcc.cs105.Main;
 
 public class IntegerPairsTester {
-	private static final int maximumScore = 6;
-	private static final int maximumAssignmentScore = 8;
+	private static final int maximumScore = 8;
+	private static final int maximumAssignmentScore = 12;
 	private static int totalScore;
 
 	private PrintStream oldOut;
@@ -71,7 +71,7 @@ public class IntegerPairsTester {
 		
 		assertEquals("Output should match!", "Enter four numbers: two pairs\n", this.baos.toString() );
 
-		totalScore += 2;
+		totalScore += 1;
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class IntegerPairsTester {
 		
 		assertEquals("Output should match!", "Enter four numbers: two pairs\n", this.baos.toString() );
 
-		totalScore += 2;
+		totalScore += 1;
 	}
 	
 	@Test
