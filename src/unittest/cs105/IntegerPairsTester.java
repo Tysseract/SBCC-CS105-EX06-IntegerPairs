@@ -2,29 +2,17 @@ package unittest.cs105;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
-
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.sbcc.cs105.Main;
+import edu.sbcc.cs105.IntegerPairs;
 
 public class IntegerPairsTester {
 	private static final int maximumScore = 8;
 	private static final int maximumAssignmentScore = 12;
 	private static int totalScore;
 
-	private PrintStream oldOut;
-	private InputStream oldIn;
-	private ByteArrayOutputStream baos;
-	private ByteArrayInputStream bais;
-	
 	@BeforeClass
 	public static void beforeTesting() {
 		totalScore = 0;
@@ -43,73 +31,37 @@ public class IntegerPairsTester {
 		System.out.println("criteria.");
 	}
 
-	public void runTest(Integer num1, Integer num2, Integer num3, Integer num4) {
-		this.bais = new ByteArrayInputStream((num1 + " " + num2 + " " + num3 + " " + num4).getBytes());
-		System.setIn(this.bais);		
-	}
-	
-	@Before
-	public void setUp() {
-		this.baos = new ByteArrayOutputStream();
-		this.oldOut = System.out;
-		this.oldIn  = System.in;
-		System.setOut(new PrintStream(baos));
-	}
-
-	@After
-	public void tearDown() {
-		System.setOut(this.oldOut);
-		System.setIn(this.oldIn);
-		
-		this.baos.reset();
-	}
-
 	@Test
-	public void check1234() throws Exception {
-		runTest(1, 1, 2, 2);
-		Main.main(null);
-		
-		assertEquals("Output should match!", "Enter four numbers: two pairs\n", this.baos.toString() );
+	public void check1122() throws Exception {
+		assertEquals("Output should match!", "two pairs", IntegerPairs.countPairs(1, 1, 2, 2));
 
 		totalScore += 1;
 	}
 
 	@Test
 	public void check1423() throws Exception {
-		runTest(1, 2, 2, 1);
-		Main.main(null);
-		
-		assertEquals("Output should match!", "Enter four numbers: two pairs\n", this.baos.toString() );
+		assertEquals("Output should match!", "two pairs", IntegerPairs.countPairs(1, 2, 2, 1));
 
 		totalScore += 1;
 	}
 	
 	@Test
-	public void check1324() throws Exception {
-		runTest(1, 2, 1, 2);
-		Main.main(null);
-		
-		assertEquals("Output should match!", "Enter four numbers: two pairs\n", this.baos.toString() );
+	public void check1212() throws Exception {
+		assertEquals("Output should match!", "two pairs", IntegerPairs.countPairs(1, 2, 1, 2));
 
 		totalScore += 2;
 	}
 
 	@Test
 	public void checkNone() throws Exception {
-		runTest(1, 2, 3, 4);
-		Main.main(null);
-		
-		assertEquals("Output should match!", "Enter four numbers: not two pairs\n", this.baos.toString() );
+		assertEquals("Output should match!", "not two pairs", IntegerPairs.countPairs(1, 2, 3, 4));
 
 		totalScore += 2;
 	}
 
 	@Test
 	public void checkThree() throws Exception {
-		runTest(1, 1, 1, 2);
-		Main.main(null);
-		
-		assertEquals("Output should match!", "Enter four numbers: not two pairs\n", this.baos.toString() );
+		assertEquals("Output should match!", "not two pairs", IntegerPairs.countPairs(1, 1, 1, 2));
 
 		totalScore += 2;
 	}
