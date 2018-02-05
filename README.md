@@ -27,7 +27,7 @@ not two pairs
 
 ### Getting Started
 
-Like our last exercise, we are going to do this exercise by writing the source code that solves the problem first in **IntegerPairs.java**. Using the techniques shown on the web page titled [How to Start Every Project in this Class](http://209.129.49.15:7990/projects/CS105F2016/repos/allan.knight/browse/HowToStartEveryProject.md) create a source file called **IntegerPairs.java**. This is where your code will go. Replace the code in that file with the code in the grey box below:
+Like our last exercise, we are going to do this exercise by writing the source code that solves the problem first in **IntegerPairs.java**. Using the techniques shown on the web page titled [How to Start Every Project in this Class](http://209.129.49.15:7990/projects/CS105/repos/allan.knight/browse/HowToStartEveryProject.md) create a source file called **IntegerPairs.java**. This is where your code will go. Replace the code in that file with the code in the grey box below:
 
 ```java
 package edu.sbcc.cs105;
