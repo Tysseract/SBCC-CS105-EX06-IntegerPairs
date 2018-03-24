@@ -34,6 +34,7 @@ public class IntegerPairs {
         Scanner in = new Scanner(System.in);
         System.out.print("please enter four numbers, separated by spaces and press enter: ");
         System.out.print(countPairs(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt()));
+        in.close();
     }
 
 }
